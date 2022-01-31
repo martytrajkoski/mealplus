@@ -1,0 +1,14 @@
+.form-popup{
+  padding:40px;
+  width: 600px;
+}
+
+.input-qty {
+  width: 50px;
+  float: right
+}
+
+.table-cart > tr > td {
+  vertical-align: middle !important;
+}
+
