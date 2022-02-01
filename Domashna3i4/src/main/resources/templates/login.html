@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +33,7 @@
             font-weight: bold;
         }
         .col2row1{
-            background-image: url("../../Pics/pic5-1.jpg");
+            background-image: url("/Pics/pic5-1.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -173,7 +174,7 @@
         }
 
         .col2row4{
-            background-image: url("../../Pics/pic3.jpg");
+            background-image: url("/Pics/pic3.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -267,9 +268,12 @@
                     <p align="center">Log in</p>
                 </div>
                 <div class="content">
+
+                    <form th:action="@{/login}" th:object="${user}" method="post">
                     <input type="email" class="email" placeholder="E-mail">
                     <input type="password" class="password" placeholder="Password">
-                    <input type="submit" class="submit" value="Log in" >
+                        <button type="submit" class="submit">Log in</button>
+                    </form>
                 </div>
             </div>
             <div class="col-lg-2 col3row2">

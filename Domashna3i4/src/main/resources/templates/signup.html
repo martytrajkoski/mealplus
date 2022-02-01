@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +33,7 @@
             font-weight: bold;
         }
         .col2row1{
-            background-image: url("Pics/pic5-1.jpg");
+            background-image: url("/Pics/pic5-1.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -181,7 +182,7 @@
             padding: 18px;
         }
         .col2row4{
-            background-image: url("Pics/pic3.jpg");
+            background-image: url("/Pics/pic3.jpg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -271,16 +272,21 @@
                 <div class="najava">
                     <p align="center">Sign up</p>
                 </div>
+                <form th:action="@{/index}" th:object="${user}" method="post">
                 <div class="content">
-                    <input type="email" class="name" placeholder="Name">
-                    <input type="email" class="name" placeholder="Last name">
-                    <input type="email" class="email" placeholder="E-mail">
-                    <input type="password" class="password" placeholder="Password">
-                    <input type="password" class="repassword" placeholder="Confirm password">
-                    <input type="submit" class="submit" value="Sign up" >
-                    <p> By signing up you agree to our terms <br> of use and privacy policy</p>
+                    <input type="text"  th:field="*{firstName}" class="name" placeholder="Name">
+                    <input type="text"  th:field="*{lastName}" class="name" placeholder="Last name">
+                    <input type="email"  th:field="*{email}" class="email" placeholder="E-mail">
+                    <input type="password" th:field="*{password}" class="password" placeholder="Password">
+                    <input type="password" th:field="*{password}" class="repassword" placeholder="Confirm password">
                 </div>
+                    <div>
+                        <button type="submit" class="submit">Sign up</button>
+                        <p> By signing up you agree to our terms <br> of use and privacy policy</p>
+                    </div>
+                </form>
             </div>
+
             <div class="col-lg-2 col3row2">
 
             </div>
